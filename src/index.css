@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none;  
+        scrollbar-width: none; 
+    }
+}
+
+body::-webkit-scrollbar {
+    width: 12px;              
+}
+    
+body::-webkit-scrollbar-track {
+    background: rgb(15,15,15);        
+}
+    
+body::-webkit-scrollbar-thumb {
+    background-color: grey;    
+}
+
+@supports (scrollbar-width: auto) {
+    .sidebar {
+        scrollbar-color: grey rgb(15,15,15);
+        scrollbar-width: none;
+    }
+    .sidebar:hover {
+        scrollbar-width: thin;
+    }
+}
+@supports (scrollbar-width: auto) {
+    .live-chat {
+        scrollbar-color: grey rgb(15,15,15);
+        scrollbar-width: thin;
+    }
+}
